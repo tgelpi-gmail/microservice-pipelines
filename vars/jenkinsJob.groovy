@@ -22,7 +22,7 @@ def packageArtifact(){
 
 def buildAndTest(){
     stage("Backend tests"){
-        mvnHome = tool 'Maven 3.5.0'
+        mvnHome = tool 'LOCALMAVEN'
         sh "printenv;mvn test"
     }
 }
