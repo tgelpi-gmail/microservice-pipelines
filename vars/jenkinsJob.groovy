@@ -22,7 +22,8 @@ def packageArtifact(){
 
 def buildAndTest(){
     stage("Backend tests"){
-        mvnHome = tool 'LOCALMAVEN'
+        withMaven( maven: 'LOCALMAVEN') {
         sh "printenv;mvn test"
+        }
     }
 }
