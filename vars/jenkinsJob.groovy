@@ -4,6 +4,7 @@ def call(){
             checkout scm
         }
 
+         mvnHome = tool 'Maven 3.5.0'
         // Execute different stages depending on the job
         if(env.JOB_NAME.contains("deploy")){
             packageArtifact()
