@@ -4,7 +4,7 @@ def call(){
             checkout scm
         }
 
-         mvnHome = tool 'Maven 3.5.0'
+        
         // Execute different stages depending on the job
         if(env.JOB_NAME.contains("deploy")){
             packageArtifact()
@@ -22,6 +22,7 @@ def packageArtifact(){
 
 def buildAndTest(){
     stage("Backend tests"){
+        mvnHome = tool 'Maven 3.5.0'
         sh "printenv;mvn test"
     }
 }
