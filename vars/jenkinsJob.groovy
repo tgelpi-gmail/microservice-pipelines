@@ -23,7 +23,7 @@ def packageArtifact(){
 def buildAndTest(){
     stage("Backend tests") {
         withEnv(["PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"]) {
-        sh "printenv;hostname;pwd;which mvn;mvn test"
+        sh mvn test"
         }
     }
 }
