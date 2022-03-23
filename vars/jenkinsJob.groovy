@@ -22,6 +22,6 @@ def packageArtifact(){
 
 def buildAndTest(){
     stage("Backend tests") {
-        sh "printenv;hostname;mvn test"
+        sh "printenv;which mvn;mvn test"
     }
 }
