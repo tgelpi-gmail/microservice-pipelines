@@ -22,7 +22,7 @@ def packageArtifact(){
 
 def buildAndTest(){
     stage("Backend tests") {
-        withEnv(["JENKINS_HOME=/Users/tgelpi/.jenkins"]) {
+        withEnv(["PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"]) {
         sh "printenv;hostname;pwd;which mvn;mvn test"
         }
     }
