@@ -16,7 +16,9 @@ def call(){
 
 def packageArtifact(){
     stage("Package artifact") {
+        withEnv(["PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"]) {
         sh "mvn package"
+        }
     }
 }
 
